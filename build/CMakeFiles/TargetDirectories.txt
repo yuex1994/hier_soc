@@ -1,0 +1,3 @@
+/ILAng/ila_8051_soc/build/CMakeFiles/rebuild_cache.dir
+/ILAng/ila_8051_soc/build/CMakeFiles/edit_cache.dir
+/ILAng/ila_8051_soc/build/CMakeFiles/simple.dir

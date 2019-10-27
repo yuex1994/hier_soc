@@ -1,0 +1,16 @@
+{
+  "instructions":
+  [
+    {
+      "instruction"     : "I.240",
+      "start condition" : ["$decode$", "m1.oc8051_top_1.pc_change == 1", "m1.oc8051_xiommu1.aes_top_i.aes_state_idle == 1"],
+      "ready signal"    : "m1.oc8051_top_1.pc_change == 1"
+    }
+  ],
+  "global invariants" : [
+    "(m1.oc8051_top_1.oc8051_memory_interface1.op_pos < 6)",
+    "(~(m1.oc8051_top_1.oc8051_memory_interface1.dack_ir == 1)) || (m1.oc8051_top_1.oc8051_decoder1.state != 0)",
+    "(~(m1.oc8051_top_1.oc8051_memory_interface1.cdone == 1)) || (m1.oc8051_top_1.oc8051_decoder1.state != 0)",
+    "(~((m1.oc8051_top_1.rd == 1) && (m1.oc8051_top_1.irom_out_of_rst == 1) && (m1.oc8051_top_1.oc8051_memory_interface1.pc_wr_r == 0) && (m1.oc8051_top_1.oc8051_memory_interface1.pc_wr_r2 == 0)) || (m1.oc8051_top_1.oc8051_memory_interface1.pc == m1.oc8051_top_1.oc8051_memory_interface1.pc_ref))"  
+  ]
+}
